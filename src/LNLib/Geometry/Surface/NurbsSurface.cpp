@@ -1187,8 +1187,8 @@ LNLib::UV LNLib::NurbsSurface::GetParamOnSurface(const LN_NurbsSurface& surface,
 
 		XYZ Suv, Svu = derivatives[1][1];
 
-		double fuv = -Su.DotProduct(difference);
-		double guv = -Sv.DotProduct(difference);
+		double fuv = difference.DotProduct(Su);
+		double guv = difference.DotProduct(Sv);
 
 		double fu = Su.DotProduct(Su) + difference.DotProduct(Suu);
 		double fv = Su.DotProduct(Sv) + difference.DotProduct(Suv);
